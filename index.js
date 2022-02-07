@@ -7,4 +7,5 @@ handle["/"] = requestHandlers.index;
 handle["/index.html"] = requestHandlers.index;
 handle["/portfolio.html"] = requestHandlers.portfolio;
 
+exports.handle = handle;
 server.start(router.route, handle);
