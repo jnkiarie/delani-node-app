@@ -11,12 +11,14 @@ let url = require('url');
 // }).listen(8000);
 
 // A function to wrap our server functionality so that we can export it
-let start = function(){
+let start = function(route,handle){
 function onRequest(request, response){
     // Extracting the pathname from the url requested
     let pathname = url.parse(request.url).pathname
-    console.log(pathname);
-    console.log("Request Received")
+    console.log('Request for' +pathname + ' Has been Received');
+
+    //passint the pathname as a parameter to the route function 
+    route(handle,pathname);
     response.writeHead(200, {"Content-type": "text/plain"});
     response.write("Server Creation Complete ");
     response.write('We are live!!');
