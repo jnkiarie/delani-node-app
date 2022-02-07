@@ -1,6 +1,6 @@
 let server = require('./server');
-let router = require('./router')
-let requestHandlers = ('./requestHandler')
+let router = require('./router');
+let requestHandlers = require('./requestHandlers');
 
 let handle = {};
 handle["/"] = requestHandlers.index;
